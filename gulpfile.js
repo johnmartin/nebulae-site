@@ -16,17 +16,17 @@ var paths = {
       './bower_components/jquery/dist/jquery.js',
       './bower_components/voronoi/rhill-voronoi-core.js'
     ],
-    vendor_styles: [
-    ],
     vendor_fonts_css: [
-      './bower_components/fira/fira.css'
+      './bower_components/fira/fira.css',
+      './bower_components/font-awesome/css/font-awesome.css'
     ],
     vendor_fonts_font: [
       './bower_components/fira/**/*.eot',
       './bower_components/fira/**/*.otf',
       './bower_components/fira/**/*.svg',
       './bower_components/fira/**/*.ttf',
-      './bower_components/fira/**/*.woff'
+      './bower_components/fira/**/*.woff',
+      './bower_components/font-awesome/fonts/**'
     ]
   },
   dest: {
@@ -34,7 +34,6 @@ var paths = {
     scripts: './dist/scripts/',
     images: './dist/images/',
     vendor_scripts: './dist/scripts/',
-    vendor_styles: './dist/styles/',
     vendor_fonts: './dist/fonts/'
   }
 };
@@ -65,12 +64,6 @@ gulp.task('vendor_scripts', function () {
     .pipe(gulp.dest(paths.dest.vendor_scripts));
 });
 
-gulp.task('vendor_styles', function () {
-  return gulp.src(paths.src.vendor_styles)
-    .pipe(concat('vendor.css'))
-    .pipe(gulp.dest(paths.dest.vendor_styles));
-});
-
 gulp.task('vendor_fonts', function () {
   gulp.src(paths.src.vendor_fonts_css)
     .pipe(concat('fonts.css'))
@@ -83,7 +76,7 @@ gulp.task('clean', function () {
   del('./dist');
 });
 
-gulp.task('default', ['scripts', 'less', 'images', 'vendor_scripts', 'vendor_styles', 'vendor_styles', 'vendor_fonts']);
+gulp.task('default', ['scripts', 'less', 'images', 'vendor_scripts', 'vendor_fonts']);
 gulp.task('build', ['clean', 'default']);
 
 gulp.task('watch', function () {
