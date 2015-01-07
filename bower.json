@@ -1,0 +1,11 @@
+{
+  "name": "nebulaegame.com",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "jquery": "2.1.*",
+    "normalize.css": "3.0.*",
+    "fira": "0.1.*",
+    "voronoi": "https://github.com/gorhill/Javascript-Voronoi/archive/master.zip"
+  }
+}

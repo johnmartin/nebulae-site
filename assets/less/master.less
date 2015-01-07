@@ -1,0 +1,39 @@
+@import (less) "../../bower_components/normalize.css/normalize.css";
+
+@unit: 20px;
+@sidebar: 200px;
+@wrapper: 800px;
+
+@background: #F2F3F3;
+@foreground: #152042;
+@primary: #E84456;
+@secondary: #D8DADB;
+
+body {
+  color: @foreground;
+  background-color: @background;
+  font-family: "Fira Mono", monospace;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: @foreground;
+  width: @sidebar;
+  padding: @unit;
+  color: @secondary;
+  .logo {
+    color: @primary;
+    font-weight: 300;
+  }
+}
+
+.wrapper {
+  padding: @unit;
+  padding-left: ( @sidebar + ( @unit * 3 ) );
+  width: @wrapper;
+}
