@@ -2,7 +2,7 @@
 
 @unit: 20px;
 @sidebar: 200px;
-@wrapper: 800px;
+@wrapper: 700px;
 
 @background: #F2F3F3;
 @foreground: #152042;
@@ -13,22 +13,37 @@ body {
   color: @foreground;
   background-color: @background;
   font-family: "Fira Mono", monospace;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
-header {
+a {
+  color: @primary;
+  &:hover {
+    color: @foreground;
+  }
+}
+
+#header {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: @foreground;
+  background: @foreground none 50% 100% no-repeat;
+  background-size: cover;
   width: @sidebar;
   padding: @unit;
-  color: @secondary;
+  color: mix(@foreground, @secondary, 25%);
   .logo {
     color: @primary;
     font-weight: 300;
+    font-size: 38px;
+    a {
+      text-decoration: none;
+    }
+  }
+  a:hover {
+    color: @background;
   }
 }
 
@@ -36,4 +51,20 @@ header {
   padding: @unit;
   padding-left: ( @sidebar + ( @unit * 3 ) );
   width: @wrapper;
+}
+
+#content {
+  margin-top: @unit;
+  .date {
+    color: mix(@background, @foreground, 25%);
+    margin-bottom: ( @unit * 1.5 );
+  }
+  h1, h2, h3, h4 {
+    font-weight: normal;
+  }
+  blockquote {
+    font-size: 21px;
+    font-style: italic;
+    margin-left: 0;
+  }
 }

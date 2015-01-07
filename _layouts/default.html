@@ -4,29 +4,27 @@
 
   <title>{{ page.title }}</title>
 
-  <link href="/dist/styles/vendor.css" rel="stylesheet">
   <link href="/dist/fonts/fonts.css" rel="stylesheet">
   <link href="/dist/styles/master.css" rel="stylesheet">
 
 </head>
 <body>
 
-  <header>
-    <h1 class="logo">Nebulae</h1>
-    <p>A procedural survival 2d space exploration game.</p>
-    <p>Coming to iOS 2015.</p>
+  <header id="header">
+    <h1 class="logo"><a href="/">Nebulae</a></h1>
+    <p>A 2D infinite space exploration, survival &amp; crafting game.</p>
+    <p>Coming to iOS in 2015.</p>
+    <p><a href="http://twitter.com/NebulaeGame" target="_blank">Twitter</a></p>
+    <p><a href="mailto:support@nebulaegame.com">Email me</a></p>
   </header>
 
-  <div class="wrapper">
+  <div id="content" class="wrapper">
     {{ content }}
   </div>
 
-  <footer class="wrapper">
-    Made by <a href="http://johnmart.in/" target="_blank">John Martin</a>
-  </footer>
-
+  <style id="header-style"></style>
   <script src="/dist/scripts/vendor.js"></script>
-  <script src="/dist/scripts/me.js"></script>
+  <script src="/dist/scripts/app.js"></script>
 
 </body>
 </html>

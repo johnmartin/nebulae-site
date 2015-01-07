@@ -1,33 +1,29 @@
 ---
+id: index
 layout: default
 title: Nebulae - A procedural survival 2d space exploration game
 ---
 
-test
-
 {% for post in paginator.posts %}
-  <p>
-    <a class="title" href="{{ post.url }}">{{ post.title }}</a>
-    {{ post.content | strip_newlines | first | strip_html }}
-    ... <a href="{{ post.url }}">read more &rarr;</a>
-    &middot;
-    {{ post.date | date_to_string }}
-    </p>
-  </p>
+<p>
+  <a class="title" href="{{ post.url }}">{{ post.title }}</a> &middot;
+  {{ post.date | date_to_string }}
+</p>
+</p>
 {% endfor %}
 
 {% if paginator.total_pages > 1 %}
-  <p class="pagination">
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Newer posts</a>
-    {% else %}
-    <span>Newer posts</span>
-    {% endif %}
-    &middot;
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"> Older posts</a>
-    {% else %}
-    <span>Older posts</span>
-    {% endif %}
-  </p>
+<p class="pagination">
+  {% if paginator.previous_page %}
+  <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Newer posts</a>
+  {% else %}
+  <span>Newer posts</span>
+  {% endif %}
+  &middot;
+  {% if paginator.next_page %}
+  <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"> Older posts</a>
+  {% else %}
+  <span>Older posts</span>
+  {% endif %}
+</p>
 {% endif %}
