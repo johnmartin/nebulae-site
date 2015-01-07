@@ -24,6 +24,15 @@ a {
   }
 }
 
+hr {
+  margin: ( @unit * 1.5 ) 0;
+  padding: 0;
+  border: 1px solid mix(@background, @foreground, 75%);
+  &.mini {
+    width: ( @unit * 2 );
+  }
+}
+
 #header {
   position: fixed;
   top: 0;
@@ -44,6 +53,25 @@ a {
   }
   a:hover {
     color: @background;
+  }
+  hr {
+    border-color: mix(@background, @foreground, 25%);
+  }
+  .nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0 0 ( @unit / 4 ) 0;
+      padding: 0;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        &.active {
+          color: @background;
+        }
+      }
+    }
   }
 }
 
@@ -67,4 +95,8 @@ a {
     font-style: italic;
     margin-left: 0;
   }
+}
+
+.pagination {
+  color: mix(@background, @foreground, 50%);
 }

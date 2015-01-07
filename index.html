@@ -1,29 +1,30 @@
 ---
-id: index
+id: home
 layout: default
 title: Nebulae - A procedural survival 2d space exploration game
 ---
 
+<h2>Development blog</h2>
+<hr class="mini">
+
 {% for post in paginator.posts %}
-<p>
-  <a class="title" href="{{ post.url }}">{{ post.title }}</a> &middot;
-  {{ post.date | date_to_string }}
-</p>
-</p>
+  <p>
+    <a class="title" href="{{ post.url }}">{{ post.title }} &rarr;</a> &middot;
+    {{ post.date | date_to_string }}
+  </p>
 {% endfor %}
 
-{% if paginator.total_pages > 1 %}
-<p class="pagination">
-  {% if paginator.previous_page %}
-  <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Newer posts</a>
+<hr class="mini">
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}">Older posts</a>
   {% else %}
-  <span>Newer posts</span>
+    <span>Older posts</span>
   {% endif %}
   &middot;
-  {% if paginator.next_page %}
-  <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"> Older posts</a>
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}">Newer posts</a>
   {% else %}
-  <span>Older posts</span>
+    <span>Newer posts</span>
   {% endif %}
-</p>
-{% endif %}
+</div>
