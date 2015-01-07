@@ -76,7 +76,7 @@ gulp.task('clean', function () {
   del('./dist');
 });
 
-gulp.task('default', ['scripts', 'less', 'images', 'vendor_scripts', 'vendor_styles', 'vendor_fonts']);
+gulp.task('default', ['scripts', 'less', 'images', 'vendor_scripts', 'vendor_fonts']);
 gulp.task('build', ['clean', 'default']);
 
 gulp.task('watch', function () {
