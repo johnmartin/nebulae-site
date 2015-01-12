@@ -1,8 +1,8 @@
 !function ($, Voronoi) {
 
   var sites = [];
-  var header_width = 200;
-  var header_height = 1000;
+  var header_width = 400;
+  var header_height = 400;
   var total_cells = 100;
   for (var i = 0; i < total_cells; i++) {
     var x = Math.random()*header_width;
