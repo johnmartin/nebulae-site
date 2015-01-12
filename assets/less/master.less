@@ -3,6 +3,7 @@
 @unit: 20px;
 @sidebar: 200px;
 @wrapper: 700px;
+@fluid-width: 980px;
 
 @background: #F2F3F3;
 @foreground: #152042;
@@ -91,12 +92,39 @@ hr {
     font-weight: normal;
   }
   blockquote {
-    font-size: 21px;
-    font-style: italic;
     margin-left: 0;
+    font-size: 18px;
+    padding-left: @unit;
+    color: mix(@background, @foreground, 10%);
+    border-left: 4px solid mix(@background, @foreground, 75%);
+  }
+  img {
+    max-width: 100%;
   }
 }
 
 .pagination {
   color: mix(@background, @foreground, 50%);
+}
+
+@media screen and (max-width: @fluid-width) {
+  #header {
+    position: relative;
+    width: auto;
+    .logo {
+      margin-top: 0;
+    }
+    .nav {
+      clear: both;
+      overflow: hidden;
+      li {
+        float: left;
+        margin-right: @unit;
+      }
+    }
+  }
+  .wrapper {
+    width: auto;
+    padding-left: @unit;
+  }
 }
